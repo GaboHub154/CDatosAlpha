@@ -108,6 +108,7 @@ def cuartil(datos,q):
   """
   datos.sort() # Ordenamos la lista en caso de que venga desordenada
   cuartiles=[]
+  n=len(datos)
   Pos_q1 = int(n * 0.25)
   Pos_q2 = int(n * 0.5)
   Pos_q3 = int(n * 0.75) # Índices de los cuartiles
@@ -197,5 +198,5 @@ def corr(datosX,datosY):
     sumaXY+=datosX[i]*datosY[i]
     sumaX2+=datosX[i]**2
     sumaY2+=datosY[i]**2
-  r=(len(datos)*sumaXY-sum(datosX)*sum(datosY))/((len(datosX)*sumaX2-sum(datosX)**2)*(len(datosX)*sumaY2-sum(datosY)**2))**0.5
+  r=(len(datosX)*sumaXY-sum(datosX)*sum(datosY))/((len(datosX)*sumaX2-sum(datosX)**2)*(len(datosX)*sumaY2-sum(datosY)**2))**0.5
   return r
