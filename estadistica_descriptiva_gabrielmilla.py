@@ -117,7 +117,7 @@ def cuartil(datos,q):
       q3 = (datos[Pos_q3-1]+datos[Pos_q3])/2
   else:
       q1 = datos[Pos_q1]
-      q3 = lista_ordenada[Pos_q3]
+      q3 = datos[Pos_q3]
 
   q2 = datos[Pos_q2]
 
