@@ -107,16 +107,27 @@ def cuartil(datos,q):
           de la lista.
   """
   datos.sort() # Ordenamos la lista en caso de que venga desordenada
-  if q==1: # Primer cuartil
-    cuartil=datos[len(datos)//4]
-    return cuartil
-  elif q==2: # Segundo cuartil
-    cuartil=(datos[len(datos)//2]+datos[len(datos)//2-1])/2
-    return cuartil
-  elif q==3: # Tercer cuartil
-    cuartil=datos[3*len(datos)//4]
-    return cuartil
+  cuartiles=[]
+  Pos_q1 = int(n * 0.25)
+  Pos_q2 = int(n * 0.5)
+  Pos_q3 = int(n * 0.75) # Índices de los cuartiles
+  # Casos donde no obtengamos índices enteros (no es divisible por 4)
+  if n%4 == 0:
+      q1 = (datos[Pos_q1-1]+datos[Pos_q1])/2
+      q3 = (datos[Pos_q3-1]+datos[Pos_q3])/2
+  else:
+      q1 = datos[Pos_q1]
+      q3 = lista_ordenada[Pos_q3]
 
+  q2 = datos[Pos_q2]
+
+  if q == 1:
+    return q1
+  elif q == 2:
+    return q2
+  elif q == 3:
+    return q3
+    
 # Rango Intercuartílico
 def iqr(datos):
   """Función que calcula el rango intercuartílico
