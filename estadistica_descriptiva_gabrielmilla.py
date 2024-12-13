@@ -176,20 +176,7 @@ def percent(datos,p):
   elif p>1: # Percentiles posteriores
     percent=datos[int(len(datos)*p/100)]
     return percent
-
-# Regla de Freeman & Diaconis
-def FRR(datos):
-  """Función que calcula la cantidad óptima de bines para un
-  histograma usando la regla de Freeman & Diaconis.
-  ------------------------------------------
-  ENTRADA (datos): Una lista con números enteros y/o
-           decimales.
-  SALIDA (FRR): La cantidad óptima de bines para un histograma
-            como un número entero.
-  """
-  frr=2*iqr(datos)/len(datos)**(-1/3)
-  return int(frr)
-
+    
 # Coeficiente de correlación
 def corr(datosX,datosY):
   """Función que calcula el coeficiente de correlación
